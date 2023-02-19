@@ -1,0 +1,166 @@
+.navigation-container {
+  background-color: $PRIMARY-COLOR;
+  color: $COLOR-WHITE;
+  padding: 1.5rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header-container {
+    display: flex;
+    align-items: center;
+
+    .img-logo {
+      $SIZE: 35px;
+      width: $SIZE;
+      height: $SIZE;
+    }
+    .header {
+      font-size: 1.5rem;
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+
+    li {
+      font-weight: 200;
+      padding: 0.5rem;
+      transition: all 700ms ease-in-out;
+      position: relative;
+
+      &:hover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 2%;
+        z-index: 2;
+        background-color: $SECONDARY-COLOR;
+        animation: load 700ms ease-in-out;
+      }
+      &:hover::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 2%;
+        z-index: 2;
+        background-color: $SECONDARY-COLOR;
+        animation: load 700ms ease-in-out;
+      }
+
+      @keyframes load {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 50%;
+        }
+      }
+    }
+    .navigation-container__link-button {
+      border: 1px solid $SECONDARY-COLOR;
+      padding: 10px;
+      transition: all 800ms ease-in-out;
+
+      &:hover {
+        background-color: $SECONDARY-COLOR;
+      }
+    }
+  }
+}
+.menu {
+  border: 1px solid $SECONDARY-COLOR;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.open-menu {
+  background-color: $PRIMARY-COLOR;
+  color: $COLOR-WHITE;
+  position: relative;
+  z-index: 10;
+
+  height: calc(100vh - 6rem);
+  transition: all 500ms ease-in-out;
+  animation: menu 500ms ease-in-out;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.8rem;
+    font-weight: 200;
+
+    li {
+      padding: 0.6rem;
+      transition: all 500ms ease-in-out;
+      position: relative;
+
+      &:hover::before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3%;
+        background-color: $SECONDARY-COLOR;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        animation: load 700ms ease-in-out;
+      }
+      &:hover::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3%;
+        background-color: $SECONDARY-COLOR;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        animation: load 700ms ease-in-out;
+      }
+
+
+
+      &:last-child {
+        border: 1px solid $SECONDARY-COLOR;
+
+        &:hover {
+          background-color: $SECONDARY-COLOR;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  @keyframes menu {
+    0% {
+      height: 0vh;
+    }
+    100% {
+      height: calc(100vh - 6rem);
+    }
+  }
+}

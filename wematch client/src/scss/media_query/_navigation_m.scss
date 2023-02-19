@@ -1,0 +1,30 @@
+@media screen and (min-width: 120rem) {
+  .navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wrapper {
+      max-width: 120rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media screen and (max-width: 45rem) {
+  .navigation-container__links {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .menu,
+  .open-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 31.25rem) {
+    .navigation-container {
+        padding: 1.5rem 2rem;
+    }
+}

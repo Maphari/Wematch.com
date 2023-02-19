@@ -1,0 +1,21 @@
+// TAILWINDCSS
+@import "./index";
+// ABSTRACTS
+@import "./abstracts//variables";
+// BASE
+@import "./base/resets";
+// COMPONENTS
+@import "./components/navigation";
+@import "./components/hero";
+// LAYOUTS
+// PAGES
+// MEDIA QUERY
+@import "./media_query/navigation_m";
+
+
+
+
+// GLOBAL STYLES
+.color {
+    color: $SECONDARY-COLOR;
+  }
